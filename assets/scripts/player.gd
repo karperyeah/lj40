@@ -34,6 +34,8 @@ func _jump(delta: float) -> void:
 	if Input.is_action_pressed("action") and is_on_floor():
 		velocity.y = -jump_velocity
 		animation_player.play("Jump")
+		$JumpSound.pitch_scale = rand_range(0.7, 1.3)
+		$JumpSound.play()
 
 
 func _animation(direction: float) -> void:
