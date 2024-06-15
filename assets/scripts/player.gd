@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 onready var sprite = $Sprite
 onready var animation_player = $AnimationPlayer
+onready var hat_sprite = get_node("Sprite/HatPosition/").get_child(0)
 
 export var gravity = 640.0
 
@@ -14,6 +15,7 @@ export var jump_velocity = 275.0
 var direction = 0.0
 var velocity = Vector2()
 
+var last_direction : int = 0 # Contains last known direction
 
 func _gravity(delta: float) -> void:
 	if not is_on_floor():
@@ -37,6 +39,7 @@ func _jump(delta: float) -> void:
 func _animation(direction: float) -> void:
 	if direction:
 		sprite.flip_h = direction < 0
+		hat_sprite.scale.x = direction
 
 	if velocity.y > 0:
 		animation_player.play("Fall")
@@ -54,6 +57,7 @@ func _process(delta) -> void:
 	_animation(direction)
 	_jump(delta)
 	
+	last_direction = direction
 
 func _physics_process(delta: float) -> void:
 	_gravity(delta)
