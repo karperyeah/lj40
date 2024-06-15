@@ -3,13 +3,13 @@ extends KinematicBody2D
 onready var sprite = $Sprite
 onready var animation_player = $AnimationPlayer
 
-export var gravity = 480.0
+export var gravity = 640.0
 
 export var speed = 150.0
 export var acceleration = 600.0
-export var deacceleration = 400.0
+export var deacceleration = 10000.0
 
-export var jump_velocity = 200.0
+export var jump_velocity = 300.0
 
 var direction = 0.0
 var velocity = Vector2()
