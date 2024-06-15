@@ -76,4 +76,3 @@ func _physics_process(delta: float) -> void:
 	_movement(delta)
 	
 	_coyote_time(was_on_floor)
-	print(coyote_time.time_left)
