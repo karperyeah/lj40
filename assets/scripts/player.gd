@@ -35,9 +35,11 @@ func _jump(delta: float) -> void:
 
 
 func _animation(direction: float) -> void:
-	if direction:
+	if direction and velocity.x != 0:
 		sprite.flip_h = direction < 0
-	else:
+		animation_player.play("Run")
+	
+	if velocity.x == 0:
 		animation_player.play("Idle")
 
 
