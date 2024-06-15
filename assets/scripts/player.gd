@@ -6,8 +6,8 @@ onready var animation_player = $AnimationPlayer
 export var gravity = 640.0
 
 export var speed = 150.0
-export var acceleration = 600.0
-export var deacceleration = 10000.0
+export var acceleration = 800.0
+export var deacceleration = 700.0
 
 export var jump_velocity = 300.0
 
