@@ -9,7 +9,7 @@ export var speed = 150.0
 export var acceleration = 800.0
 export var deacceleration = 700.0
 
-export var jump_velocity = 300.0
+export var jump_velocity = 275.0
 
 var direction = 0.0
 var velocity = Vector2()
