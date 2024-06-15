@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/sprites/button.png" type="Texture" id=1]
 [ext_resource path="res://assets/scripts/button.gd" type="Script" id=2]
+[ext_resource path="res://assets/sound/button_click.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 5 )
@@ -119,5 +120,8 @@ region_rect = Rect2( 0, 16, 32, 8 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Base"]
 anims/Idle = SubResource( 3 )
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
 
 [connection signal="area_entered" from="." to="." method="_on_Button_area_entered"]

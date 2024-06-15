@@ -11,3 +11,5 @@ func _ready():
 
 func _on_Button_area_entered(area):
 	$AnimationPlayer.play("Press")
+	$Sound.pitch_scale = rand_range(0.8, 1.2)
+	$Sound.play()
