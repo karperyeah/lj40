@@ -19,7 +19,6 @@ func _gravity(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-
 func _movement(delta: float) -> void:
 	if direction:
 		velocity.x = move_toward(velocity.x, direction * speed, acceleration * delta)
@@ -32,15 +31,21 @@ func _movement(delta: float) -> void:
 func _jump(delta: float) -> void:
 	if Input.is_action_pressed("action") and is_on_floor():
 		velocity.y = -jump_velocity
+		animation_player.play("Jump")
 
 
 func _animation(direction: float) -> void:
-	if direction and velocity.x != 0:
+	if direction:
 		sprite.flip_h = direction < 0
-		animation_player.play("Run")
-	
-	if velocity.x == 0:
+
+	if velocity.y > 0:
+		animation_player.play("Fall")
+
+	if velocity.x == 0 and velocity.y == 0:
 		animation_player.play("Idle")
+	
+	if velocity.x != 0 and is_on_floor():
+		animation_player.play("Run")
 
 
 func _process(delta) -> void:
