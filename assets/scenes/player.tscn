@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/sprites/hats.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 8 )
+extents = Vector2( 7.5, 8 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 6 )
@@ -445,10 +445,12 @@ tracks/5/keys = {
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.5, 4 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 5 )
+texture = ExtResource( 1 )
+hframes = 2
 
 [node name="HatPosition" type="Position2D" parent="Sprite"]
 position = Vector2( 0, -11 )
