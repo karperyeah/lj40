@@ -11,6 +11,7 @@
 motion_scale = Vector2( 0, 0 )
 
 [node name="ColorRect" type="ColorRect" parent="ParallaxBackground/Static"]
+visible = false
 margin_left = -152.0
 margin_top = -112.0
 margin_right = 153.0
