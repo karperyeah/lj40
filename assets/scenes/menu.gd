@@ -19,8 +19,11 @@ func _process(delta):
 	if is_dialogue_mode:
 		if Input.is_action_just_pressed("action"):
 			if current_dialog_index < agent_dialogue.size()-1:
-				current_dialog_index += 1
-				$CanvasLayer/DialogBox._update_message(agent_dialogue[current_dialog_index])
+				if $CanvasLayer/DialogBox/Content.visible_characters < agent_dialogue[current_dialog_index].length():
+					$CanvasLayer/DialogBox/Content.visible_characters = agent_dialogue[current_dialog_index].length()
+				else:
+					current_dialog_index += 1
+					$CanvasLayer/DialogBox._update_message(agent_dialogue[current_dialog_index])
 			if current_dialog_index == agent_dialogue.size()-1:
 				$AnimationPlayer.play("DoorExplodeCutscene")
 				$Player.allow_control = true
