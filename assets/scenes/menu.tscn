@@ -1,9 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/sprites/menu floor.png" type="Texture" id=2]
-[ext_resource path="res://assets/scenes/button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/scenes/props/button.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/scripts/gamecamera.gd" type="Script" id=4]
+[ext_resource path="res://assets/scenes/menu.gd" type="Script" id=5]
+[ext_resource path="res://assets/scenes/props/tv.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/sound/meat.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/music/agency.ogg" type="AudioStream" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 160, 31 )
@@ -24,7 +28,129 @@ animations = [ {
 "speed": 4.0
 } ]
 
-[node name="World" type="Node2D"]
+[sub_resource type="Animation" id=7]
+resource_name = "IntroCutscene"
+length = 5.0
+step = 0.025
+tracks/0/type = "value"
+tracks/0/path = NodePath("GameCamera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 160, 120 ), Vector2( 160, 69 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Player")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ false ],
+"method": "_set_control_toggle"
+}, {
+"args": [ true ],
+"method": "_set_control_toggle"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TV:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.6, 0.65, 0.725, 0.825 ),
+"transitions": PoolRealArray( 1, 1, 1, 0.0915054, 14.42 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1e-05, 1e-05 ), Vector2( 1.7, 0.25 ), Vector2( 0.8, 1.8 ), Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("TV:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("TV/Spawn:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("TV:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 160, 37 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("AgencyMusic:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.925 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("GameCamera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 160, 120 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TV:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 160, 60 ) ]
+}
+
+[node name="Menu" type="Node2D"]
+script = ExtResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 160, 168 )
@@ -57,4 +183,20 @@ smoothing_enabled = true
 script = ExtResource( 4 )
 player_node_path = NodePath("../Player")
 
+[node name="TV" parent="." instance=ExtResource( 6 )]
+position = Vector2( 160, 60 )
+
+[node name="Spawn" type="AudioStreamPlayer2D" parent="TV"]
+position = Vector2( 1, -0.25 )
+scale = Vector2( 100000, 100000 )
+stream = ExtResource( 7 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/IntroCutscene = SubResource( 7 )
+anims/RESET = SubResource( 8 )
+
+[node name="AgencyMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[connection signal="on_press" from="Button" to="." method="_on_play_button_press"]
+[connection signal="on_press" from="Button2" to="." method="_on_settings_button_press"]

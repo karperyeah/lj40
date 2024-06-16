@@ -14,6 +14,8 @@ export var deacceleration = 700.0
 
 export var jump_velocity = 275.0
 
+export var allow_control : bool = true
+
 var direction = 0.0
 var velocity = Vector2()
 
@@ -32,7 +34,7 @@ func _movement(delta: float) -> void:
 	
 	
 func _jump(delta: float) -> void:
-	if Input.is_action_pressed("action"):
+	if Input.is_action_pressed("action") and allow_control:
 		if is_on_floor() or coyote_time.time_left > 0.0:
 			velocity.y = -jump_velocity
 			coyote_time.stop()
@@ -46,6 +48,8 @@ func _coyote_time(was_on_floor: bool) -> void:
 	if was_on_floor and not is_on_floor() and velocity.y >= 0.0:
 		coyote_time.start()
 
+func _set_control_toggle(value : bool) -> void:
+	allow_control = value
 
 func _animation(direction: float) -> void:
 	if direction:
@@ -63,7 +67,10 @@ func _animation(direction: float) -> void:
 
 
 func _process(delta: float) -> void:
-	direction = Input.get_axis("left", "right")
+	if allow_control:
+		direction = Input.get_axis("left", "right")
+	else:
+		direction = 0
 	
 	_animation(direction)
 	_jump(delta)
