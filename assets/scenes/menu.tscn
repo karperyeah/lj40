@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/sprites/menu floor.png" type="Texture" id=2]
@@ -9,8 +9,7 @@
 [ext_resource path="res://assets/sound/meat.wav" type="AudioStream" id=7]
 [ext_resource path="res://assets/music/agency.ogg" type="AudioStream" id=8]
 [ext_resource path="res://assets/sprites/game_logo_here.png" type="Texture" id=9]
-[ext_resource path="res://assets/fonts/m5x7.ttf" type="DynamicFontData" id=10]
-[ext_resource path="res://assets/sound/agent_voice_sound.wav" type="AudioStream" id=11]
+[ext_resource path="res://assets/scenes/props/dialogbox.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/scenes/props/door.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/sound/explosion.wav" type="AudioStream" id=13]
 
@@ -103,7 +102,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=7]
 resource_name = "IntroCutscene"
-length = 5.0
+length = 8.0
 step = 0.025
 tracks/0/type = "value"
 tracks/0/path = NodePath("GameCamera:position")
@@ -124,13 +123,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 4 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ false ],
-"method": "_set_control_toggle"
-}, {
-"args": [ true ],
 "method": "_set_control_toggle"
 } ]
 }
@@ -187,7 +183,7 @@ tracks/6/path = NodePath("AgencyMusic:playing")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
-tracks/6/enabled = true
+tracks/6/enabled = false
 tracks/6/keys = {
 "times": PoolRealArray( 0.925 ),
 "transitions": PoolRealArray( 1 ),
@@ -217,6 +213,20 @@ tracks/8/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
+}
+tracks/9/type = "method"
+tracks/9/path = NodePath(".")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0.925 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ true ],
+"method": "_dialog_mode"
+} ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -257,9 +267,6 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
-
-[sub_resource type="DynamicFont" id=9]
-font_data = ExtResource( 10 )
 
 [node name="Menu" type="Node2D"]
 script = ExtResource( 5 )
@@ -330,21 +337,12 @@ anims/RESET = SubResource( 8 )
 stream = ExtResource( 8 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
-margin_left = 58.0
+[node name="DialogBox" parent="CanvasLayer" instance=ExtResource( 10 )]
+margin_left = 71.0
 margin_top = 146.0
-margin_right = 265.0
-margin_bottom = 197.0
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 9 )
-text = "Agent! Various timelines have fallen back into a damn loop!
-You need to do your job and step in!"
-
-[node name="DialogueSound" type="AudioStreamPlayer" parent="CanvasLayer"]
-stream = ExtResource( 11 )
-volume_db = -28.419
+margin_right = 71.0
+margin_bottom = 146.0
 
 [connection signal="on_press" from="Button" to="." method="_on_play_button_press"]
 [connection signal="on_press" from="Button2" to="." method="_on_settings_button_press"]
