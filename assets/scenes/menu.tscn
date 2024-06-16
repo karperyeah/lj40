@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/sprites/menu floor.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://assets/fonts/m5x7.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://assets/sound/agent_voice_sound.wav" type="AudioStream" id=11]
 [ext_resource path="res://assets/scenes/props/door.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/sound/explosion.wav" type="AudioStream" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 320.5, 31 )
@@ -31,6 +32,74 @@ animations = [ {
 "name": "default",
 "speed": 4.0
 } ]
+
+[sub_resource type="Animation" id=10]
+resource_name = "DoorExplodeCutscene"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("GameCamera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 395, 145 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_spawn_explosion"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 12.0 ],
+"method": "_shake_screen"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Door/Spawn:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("GameCamera:follow_player_in_scene")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
 [sub_resource type="Animation" id=7]
 resource_name = "IntroCutscene"
@@ -211,6 +280,10 @@ stream = ExtResource( 7 )
 [node name="Door" parent="." instance=ExtResource( 12 )]
 position = Vector2( 395, 145 )
 
+[node name="Spawn" type="AudioStreamPlayer2D" parent="Door"]
+stream = ExtResource( 13 )
+volume_db = -15.0
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 160, 168 )
 
@@ -225,13 +298,13 @@ shape = SubResource( 1 )
 position = Vector2( 448, -96 )
 z_index = 1
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Floor"]
 position = Vector2( 128, -96 )
 z_index = 1
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="Button" parent="." instance=ExtResource( 3 )]
@@ -246,10 +319,10 @@ position = Vector2( 160, 120 )
 current = true
 smoothing_enabled = true
 script = ExtResource( 4 )
-follow_player_in_scene = true
 player_node_path = NodePath("../Player")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/DoorExplodeCutscene = SubResource( 10 )
 anims/IntroCutscene = SubResource( 7 )
 anims/RESET = SubResource( 8 )
 
@@ -271,6 +344,7 @@ You need to do your job and step in!"
 
 [node name="DialogueSound" type="AudioStreamPlayer" parent="CanvasLayer"]
 stream = ExtResource( 11 )
+volume_db = -28.419
 
 [connection signal="on_press" from="Button" to="." method="_on_play_button_press"]
 [connection signal="on_press" from="Button2" to="." method="_on_settings_button_press"]
