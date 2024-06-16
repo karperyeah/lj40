@@ -482,6 +482,7 @@ anims/Run = SubResource( 4 )
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 7 )
+volume_db = -15.0
 
 [node name="CoyoteTime" type="Timer" parent="."]
 wait_time = 0.2
