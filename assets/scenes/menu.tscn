@@ -13,7 +13,7 @@
 [ext_resource path="res://assets/sound/agent_voice_sound.wav" type="AudioStream" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 160, 31 )
+extents = Vector2( 320.5, 31 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 2 )
@@ -188,7 +188,6 @@ texture = ExtResource( 9 )
 
 [node name="TV" parent="." instance=ExtResource( 6 )]
 position = Vector2( 160, 60 )
-scale = Vector2( 1e-05, 1e-05 )
 
 [node name="Spawn" type="AudioStreamPlayer2D" parent="TV"]
 position = Vector2( 1, -0.25 )
@@ -202,8 +201,14 @@ position = Vector2( 160, 168 )
 position = Vector2( 32, 216 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2( 128, -7 )
+position = Vector2( 288.5, -7 )
 shape = SubResource( 1 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Floor"]
+position = Vector2( 448, -96 )
+z_index = 1
+frames = SubResource( 4 )
+playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Floor"]
 position = Vector2( 128, -96 )
@@ -233,6 +238,7 @@ anims/RESET = SubResource( 8 )
 stream = ExtResource( 8 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
 margin_left = 58.0
