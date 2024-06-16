@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/squiggle.ogg-278f7389e68c771502107cc3756a4c56.oggstr"
+
+[deps]
+
+source_file="res://assets/music/squiggle.ogg"
+dest_files=[ "res://.import/squiggle.ogg-278f7389e68c771502107cc3756a4c56.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
