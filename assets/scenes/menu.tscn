@@ -7,17 +7,17 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 160, 31 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 320, 240 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 2 )
 region = Rect2( 320, 0, 320, 240 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ) ],
+"frames": [ SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "default",
 "speed": 4.0
@@ -37,8 +37,8 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Floor"]
 position = Vector2( 128, -96 )
+z_index = 1
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
 [node name="Button" parent="." instance=ExtResource( 3 )]
