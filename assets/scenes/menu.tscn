@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/sprites/menu floor.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/sprites/game_logo_here.png" type="Texture" id=9]
 [ext_resource path="res://assets/fonts/m5x7.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://assets/sound/agent_voice_sound.wav" type="AudioStream" id=11]
+[ext_resource path="res://assets/scenes/props/door.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 320.5, 31 )
@@ -136,6 +137,18 @@ tracks/7/keys = {
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 0, 0 ) ]
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("GameCamera:follow_player_in_scene")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 4.825 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
 [sub_resource type="Animation" id=8]
 length = 0.001
@@ -188,11 +201,15 @@ texture = ExtResource( 9 )
 
 [node name="TV" parent="." instance=ExtResource( 6 )]
 position = Vector2( 160, 60 )
+scale = Vector2( 1e-05, 1e-05 )
 
 [node name="Spawn" type="AudioStreamPlayer2D" parent="TV"]
 position = Vector2( 1, -0.25 )
 scale = Vector2( 100000, 100000 )
 stream = ExtResource( 7 )
+
+[node name="Door" parent="." instance=ExtResource( 12 )]
+position = Vector2( 395, 145 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 160, 168 )
@@ -208,6 +225,7 @@ shape = SubResource( 1 )
 position = Vector2( 448, -96 )
 z_index = 1
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Floor"]
@@ -228,6 +246,7 @@ position = Vector2( 160, 120 )
 current = true
 smoothing_enabled = true
 script = ExtResource( 4 )
+follow_player_in_scene = true
 player_node_path = NodePath("../Player")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
