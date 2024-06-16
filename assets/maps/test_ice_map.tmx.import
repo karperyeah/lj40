@@ -1,0 +1,22 @@
+[remap]
+
+importer="vnen.tiled_importer"
+type="PackedScene"
+path="res://.import/test_ice_map.tmx-245746f1a27bf5207f798594172fe51d.scn"
+
+[deps]
+
+source_file="res://assets/maps/test_ice_map.tmx"
+dest_files=[ "res://.import/test_ice_map.tmx-245746f1a27bf5207f798594172fe51d.scn" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+uv_clip=true
+image_flags=7
+collision_layer=1
+embed_internal_images=false
+save_tiled_properties=false
+add_background=true
+post_import_script=""
