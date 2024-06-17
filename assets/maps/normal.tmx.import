@@ -1,0 +1,22 @@
+[remap]
+
+importer="vnen.tiled_importer"
+type="PackedScene"
+path="res://.import/normal.tmx-b7b34418cf6a5bd131ec8d1af8242ed6.scn"
+
+[deps]
+
+source_file="res://assets/maps/normal.tmx"
+dest_files=[ "res://.import/normal.tmx-b7b34418cf6a5bd131ec8d1af8242ed6.scn" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+uv_clip=true
+image_flags=7
+collision_layer=1
+embed_internal_images=false
+save_tiled_properties=false
+add_background=true
+post_import_script=""
