@@ -19,7 +19,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://assets/scripts/gamecamera.gd"
 }, {
-"base": "",
+"base": "EditorVCSInterface",
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://addons/godot-git-plugin/git_api.gdns"
@@ -34,7 +34,7 @@ _global_script_class_icons={
 
 config/name="realitymelt"
 run/main_scene="res://assets/scenes/menu.tscn"
-config/icon="res://assets/sprites/icon.png"
+config/icon="res://assets/sprites/head_icon.png"
 
 [autoload]
 
