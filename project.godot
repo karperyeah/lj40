@@ -32,9 +32,9 @@ _global_script_class_icons={
 
 [application]
 
-config/name="lame jam 40"
+config/name="realitymelt"
 run/main_scene="res://assets/scenes/menu.tscn"
-config/icon="res://icon.png"
+config/icon="res://assets/sprites/icon.png"
 
 [autoload]
 
