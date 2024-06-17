@@ -19,7 +19,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://assets/scripts/gamecamera.gd"
 }, {
-"base": "EditorVCSInterface",
+"base": "",
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://addons/godot-git-plugin/git_api.gdns"
@@ -57,6 +57,10 @@ version_control_plugin_name="GitAPI"
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/godot-tiled-importer-2.4/addons/vnen.tiled_importer/plugin.cfg" )
+
+[global]
+
+background=false
 
 [gui]
 

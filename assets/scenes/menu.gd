@@ -6,7 +6,7 @@ var current_dialog_index : int = 0
 
 var agent_dialogue : Array = [
 	"You're late!",
-	"We need you to fix the timeline!",
+	"We need you to fix the timelines!",
 	"Various (former) agents left their jobs in ABHORRENT conditions!",
 	"Your presence is actively pissing me off!",
 	"Get back to work!"

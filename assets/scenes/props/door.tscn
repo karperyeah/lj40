@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/sound/qubodup-DoorOpen01.ogg" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 29, 29.875 )
+extents = Vector2( 16, 19.9375 )
 
 [sub_resource type="Animation" id=4]
 resource_name = "Close"
@@ -165,7 +165,7 @@ vframes = 2
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 modulate = Color( 0.196078, 1, 0, 1 )
-position = Vector2( 0, 2 )
+position = Vector2( 0, 11.9375 )
 shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
