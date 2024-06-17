@@ -34,6 +34,8 @@ _global_script_class_icons={
 
 config/name="realitymelt"
 run/main_scene="res://assets/scenes/menu.tscn"
+boot_splash/image="res://livearea/splash.png"
+boot_splash/bg_color=Color( 1, 1, 1, 1 )
 config/icon="res://assets/sprites/head_icon.png"
 
 [autoload]
