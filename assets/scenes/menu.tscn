@@ -344,13 +344,13 @@ shape = SubResource( 1 )
 position = Vector2( 448, -96 )
 z_index = 1
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Floor"]
 position = Vector2( 128, -96 )
 z_index = 1
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="IntroBoundaries" type="StaticBody2D" parent="."]
