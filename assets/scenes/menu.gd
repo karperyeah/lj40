@@ -6,10 +6,15 @@ var current_dialog_index : int = 0
 
 var agent_dialogue : Array = [
 	"You're late!",
-	"We need you to fix the timelines!",
-	"Various (former) agents left their jobs in ABHORRENT conditions!",
-	"Your presence is actively pissing me off!",
-	"Get back to work!"
+	"Take things more seriously, because we need you to fix the timelines!",
+	"Some (former) agents left time-splitting pins during their missions!",
+	"Let's say that I intervened, and they no longer have jobs...",
+	"... nor a noggin...",
+	"What are you waiting for?",
+	"Go clean up their mess or you'll end up like them, ya' useless sack of waste!",
+	"...",
+	"Your presence is actively pissing me off.",
+	""
 ]
 
 func _ready():
@@ -55,4 +60,4 @@ func _dialog_mode(value : bool):
 	$CanvasLayer/DialogBox._update_message(agent_dialogue[0])
 
 func _on_Door_door_activated():
-	get_tree().change_scene("res://assets/scenes/level.tscn")
+	SceneTransition.change_scene("res://assets/scenes/level.tscn")

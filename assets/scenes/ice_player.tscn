@@ -447,7 +447,9 @@ tracks/5/keys = {
 
 [node name="Player" type="KinematicBody2D" groups=["Player"]]
 script = ExtResource( 2 )
-speed = 110.0
+speed = 200.0
+acceleration = 200.0
+deacceleration = 100.0
 
 [node name="InteractBox" type="Area2D" parent="." groups=["Player"]]
 
