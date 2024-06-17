@@ -51,6 +51,10 @@ func _coyote_time(was_on_floor: bool) -> void:
 func _set_control_toggle(value : bool) -> void:
 	allow_control = value
 
+func _kill() -> void:
+	# ADD THE OTHER STUFF, ANIMATION, ETC
+	self.visible = false
+
 func _animation(direction: float) -> void:
 	if direction:
 		sprite.flip_h = direction < 0
@@ -75,7 +79,6 @@ func _process(delta: float) -> void:
 	_animation(direction)
 	_jump(delta)
 
-
 func _physics_process(delta: float) -> void:
 	var was_on_floor = is_on_floor()
 	
@@ -83,3 +86,6 @@ func _physics_process(delta: float) -> void:
 	_movement(delta)
 	
 	_coyote_time(was_on_floor)
+
+func _on_HurtBox_body_entered(body):
+	print("Agghhh! Hurts!!! Hurtie!")

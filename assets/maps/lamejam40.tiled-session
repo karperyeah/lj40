@@ -12,36 +12,44 @@
             "scaleInDock": 1,
             "scaleInEditor": 3
         },
-        "ice_clone.tmx": {
-            "scale": 1,
+        "heat_death.tmx": {
+            "scale": 0.75,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 462.5,
-                "y": 210.5
+                "x": 548.6666666666665,
+                "y": 481.99999999999994
+            }
+        },
+        "ice_clone.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 588.6666666666665,
+                "y": 497.99999999999994
             }
         },
         "normal.tmx": {
-            "scale": 0.5885546875,
+            "scale": 0.75,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 641.4017388995819,
-                "y": 481.6884582199509
+                "x": 774,
+                "y": 463.33333333333337
             }
         },
         "test_ice_map.tmx": {
             "scale": 2,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 154.25,
-                "y": 224.75
+                "x": 153.75,
+                "y": 223.75
             }
         },
         "test_map.tmx": {
             "scale": 1,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 298.5,
-                "y": 261.5
+                "x": 297.5,
+                "y": 260.5
             }
         },
         "tilemap_ice.tsx": {
@@ -71,12 +79,13 @@
     ],
     "project": "lamejam40.tiled-project",
     "recentFiles": [
+        "heat_death.tmx",
+        "normal.tmx",
         "basic_tilemap.tsx",
         "test_ice_map.tmx",
         "tilemap_ice.tsx",
         "test_map.tmx",
         "tilemap_lava.tsx",
-        "normal.tmx",
         "ice_clone.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",

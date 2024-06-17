@@ -12,11 +12,17 @@
   </objectgroup>
  </tile>
  <tile id="2">
+  <properties>
+   <property name="hazard_type" value="spike"/>
+  </properties>
   <objectgroup draworder="index" id="2">
    <object id="1" x="1" y="4" width="14" height="12"/>
   </objectgroup>
  </tile>
  <tile id="3">
+  <properties>
+   <property name="hazard_type" value="spike"/>
+  </properties>
   <objectgroup draworder="index" id="2">
    <object id="1" x="0" y="8" width="16" height="8"/>
   </objectgroup>
