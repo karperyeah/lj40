@@ -448,7 +448,7 @@ tracks/5/keys = {
 [node name="Player" type="KinematicBody2D" groups=["Player"]]
 script = ExtResource( 2 )
 
-[node name="InteractBox" type="Area2D" parent="."]
+[node name="InteractBox" type="Area2D" parent="." groups=["Player"]]
 
 [node name="Collision" type="CollisionShape2D" parent="InteractBox"]
 modulate = Color( 0.054902, 1, 0, 1 )

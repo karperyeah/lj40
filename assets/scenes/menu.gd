@@ -53,3 +53,6 @@ func _shake_screen(amount : float):
 func _dialog_mode(value : bool):
 	is_dialogue_mode = value
 	$CanvasLayer/DialogBox._update_message(agent_dialogue[0])
+
+func _on_Door_door_activated():
+	get_tree().change_scene("res://assets/scenes/level.tscn")

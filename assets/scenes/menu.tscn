@@ -393,5 +393,6 @@ stream = ExtResource( 11 )
 volume_db = -10.0
 autoplay = true
 
+[connection signal="door_activated" from="Door" to="." method="_on_Door_door_activated"]
 [connection signal="on_press" from="Button" to="." method="_on_play_button_press"]
 [connection signal="on_press" from="Button2" to="." method="_on_settings_button_press"]
