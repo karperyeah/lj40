@@ -48,4 +48,4 @@ position = Vector2( -16, -140 )
 [node name="Death" parent="." instance=ExtResource( 6 )]
 position = Vector2( -892, 812 )
 scale = Vector2( 8.63602, 1.21687 )
-scene = "res://assets/scenes/ice.tscn"
+scene = "res://assets/scenes/lava.tscn"
