@@ -3,33 +3,54 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "test_ice_map.tmx",
+    "activeFile": "ice_clone.tmx",
     "expandedProjectPaths": [
         "."
     ],
     "fileStates": {
         "basic_tilemap.tsx": {
             "scaleInDock": 1,
-            "scaleInEditor": 5.5
+            "scaleInEditor": 3
+        },
+        "ice_clone.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 462.5,
+                "y": 210.5
+            }
+        },
+        "normal.tmx": {
+            "scale": 0.5885546875,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 641.4017388995819,
+                "y": 481.6884582199509
+            }
         },
         "test_ice_map.tmx": {
             "scale": 2,
             "selectedLayer": 0,
             "viewCenter": {
                 "x": 154.25,
-                "y": 122.75
+                "y": 224.75
             }
         },
         "test_map.tmx": {
-            "scale": 1.5,
-            "selectedLayer": 0,
+            "scale": 1,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 160.33333333333334,
-                "y": 119.66666666666666
+                "x": 298.5,
+                "y": 261.5
             }
         },
         "tilemap_ice.tsx": {
-            "scaleInDock": 1
+            "scaleInDock": 1,
+            "scaleInEditor": 3
+        },
+        "tilemap_lava.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 3
         }
     },
     "last.imagePath": "C:/Users/robbi/Downloads/source-builds/lj40/assets/maps",
@@ -39,15 +60,24 @@
     "map.tileWidth": 16,
     "map.width": 20,
     "openFiles": [
-        "test_map.tmx",
         "basic_tilemap.tsx",
-        "test_ice_map.tmx"
+        "test_ice_map.tmx",
+        "tilemap_ice.tsx",
+        "test_map.tmx",
+        "ice_clone.tmx",
+        "tilemap_lava.tsx",
+        "normal.tmx",
+        "tilemap_lava.tsx"
     ],
     "project": "lamejam40.tiled-project",
     "recentFiles": [
-        "test_map.tmx",
         "basic_tilemap.tsx",
-        "test_ice_map.tmx"
+        "test_ice_map.tmx",
+        "tilemap_ice.tsx",
+        "test_map.tmx",
+        "tilemap_lava.tsx",
+        "normal.tmx",
+        "ice_clone.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

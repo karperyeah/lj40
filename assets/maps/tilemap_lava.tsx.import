@@ -1,0 +1,19 @@
+[remap]
+
+importer="vnen.tiled_tileset_importer"
+type="TileSet"
+path="res://.import/tilemap_lava.tsx-dd060190356b004327c92f3eb115a8bc.res"
+
+[deps]
+
+source_file="res://assets/maps/tilemap_lava.tsx"
+dest_files=[ "res://.import/tilemap_lava.tsx-dd060190356b004327c92f3eb115a8bc.res" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+image_flags=7
+embed_internal_images=false
+save_tiled_properties=false
+post_import_script=""
