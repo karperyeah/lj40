@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/scripts/gamecamera.gd" type="Script" id=2]
 [ext_resource path="res://assets/maps/normal.tmx" type="PackedScene" id=3]
 [ext_resource path="res://assets/music/normal.ogg" type="AudioStream" id=4]
 [ext_resource path="res://assets/scenes/props/pin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/scenes/props/death.tscn" type="PackedScene" id=6]
 
 [node name="World" type="Node2D"]
 
@@ -42,4 +43,9 @@ position = Vector2( -72, -160 )
 
 [node name="Pin" parent="normal" instance=ExtResource( 5 )]
 position = Vector2( 184, 836 )
+scene = "res://assets/scenes/ice.tscn"
+
+[node name="Death" parent="." instance=ExtResource( 6 )]
+position = Vector2( -892, 812 )
+scale = Vector2( 8.63602, 1.21687 )
 scene = "res://assets/scenes/ice.tscn"
