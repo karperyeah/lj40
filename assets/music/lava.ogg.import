@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/lava.ogg-5bdb1ff038c8978003d7f7ed0c945564.oggstr"
+
+[deps]
+
+source_file="res://assets/music/lava.ogg"
+dest_files=[ "res://.import/lava.ogg-5bdb1ff038c8978003d7f7ed0c945564.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

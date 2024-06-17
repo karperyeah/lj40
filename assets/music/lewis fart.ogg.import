@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/lewis fart.ogg-dd0479ab5518f36de7c2d49b0db95816.oggstr"
+
+[deps]
+
+source_file="res://assets/music/lewis fart.ogg"
+dest_files=[ "res://.import/lewis fart.ogg-dd0479ab5518f36de7c2d49b0db95816.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

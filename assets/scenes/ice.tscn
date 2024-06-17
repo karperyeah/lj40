@@ -28,4 +28,5 @@ autoplay = true
 position = Vector2( 60, 100 )
 
 [node name="Pin" parent="." instance=ExtResource( 5 )]
-position = Vector2( 32, 660 )
+position = Vector2( 888, 484 )
+scene = "res://assets/scenes/lava.tscn"

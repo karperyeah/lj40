@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/music/lewis fart.ogg" type="AudioStream" id=1]
+[ext_resource path="res://assets/sprites/end.png" type="Texture" id=2]
+
+[node name="End" type="Sprite"]
+position = Vector2( 160, 120 )
+texture = ExtResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -10.0
+autoplay = true
