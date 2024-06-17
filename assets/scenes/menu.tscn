@@ -385,6 +385,8 @@ position = Vector2( 272, 179 )
 [node name="GameCamera" type="Camera2D" parent="."]
 position = Vector2( 160, 120 )
 current = true
+limit_left = 0
+limit_right = 550
 smoothing_enabled = true
 script = ExtResource( 4 )
 player_node_path = NodePath("../Player")
