@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/pianono.ogg-db91db61c9bfbd4641ec247c09479274.oggstr"
+
+[deps]
+
+source_file="res://assets/music/pianono.ogg"
+dest_files=[ "res://.import/pianono.ogg-db91db61c9bfbd4641ec247c09479274.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

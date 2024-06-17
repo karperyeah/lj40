@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/scripts/gamecamera.gd" type="Script" id=2]
 [ext_resource path="res://assets/maps/test_map.tmx" type="PackedScene" id=3]
+[ext_resource path="res://assets/music/normal.ogg" type="AudioStream" id=4]
 
 [node name="World" type="Node2D"]
 
@@ -27,6 +28,12 @@ position = Vector2( 160, 116 )
 [node name="GameCamera" type="Camera2D" parent="."]
 offset = Vector2( 160, 120 )
 current = true
+smoothing_enabled = true
 script = ExtResource( 2 )
 follow_player_in_scene = true
 player_node_path = NodePath("../Player")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+autoplay = true

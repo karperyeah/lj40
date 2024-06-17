@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/sprites/menu floor.png" type="Texture" id=2]
@@ -13,6 +13,10 @@
 [ext_resource path="res://assets/music/squiggle.ogg" type="AudioStream" id=11]
 [ext_resource path="res://assets/scenes/props/door.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/sound/explosion.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/fonts/flipnote-hatena-font.ttf" type="DynamicFontData" id=14]
+
+[sub_resource type="DynamicFont" id=12]
+font_data = ExtResource( 14 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 320.5, 31 )
@@ -34,6 +38,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 10, 125 )
 
 [sub_resource type="Animation" id=10]
 resource_name = "DoorExplodeCutscene"
@@ -314,6 +319,17 @@ script = ExtResource( 5 )
 position = Vector2( 161, 87 )
 texture = ExtResource( 9 )
 
+[node name="Content" type="RichTextLabel" parent="Logo"]
+margin_left = -156.0
+margin_top = -87.0
+margin_right = 164.0
+margin_bottom = -47.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 12 )
+bbcode_enabled = true
+bbcode_text = "a game made by karperyeah, mechanicalruby and lewwylemons"
+text = "a game made by karperyeah, mechanicalruby and lewwylemons"
+
 [node name="TV" parent="." instance=ExtResource( 6 )]
 position = Vector2( 160, 60 )
 scale = Vector2( 1e-05, 1e-05 )
@@ -331,7 +347,7 @@ stream = ExtResource( 13 )
 volume_db = -15.0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 160, 168 )
+position = Vector2( 40, 168 )
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2( 32, 216 )
@@ -356,14 +372,15 @@ playing = true
 [node name="IntroBoundaries" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IntroBoundaries"]
+position = Vector2( -8, 119 )
+shape = SubResource( 11 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="IntroBoundaries"]
+position = Vector2( 456, 119 )
 shape = SubResource( 11 )
 
 [node name="Button" parent="." instance=ExtResource( 3 )]
-position = Vector2( 101, 179 )
-
-[node name="Button2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 214, 179 )
-color = Color( 0.219608, 1, 0.305882, 1 )
+position = Vector2( 272, 179 )
 
 [node name="GameCamera" type="Camera2D" parent="."]
 position = Vector2( 160, 120 )
@@ -395,4 +412,3 @@ autoplay = true
 
 [connection signal="door_activated" from="Door" to="." method="_on_Door_door_activated"]
 [connection signal="on_press" from="Button" to="." method="_on_play_button_press"]
-[connection signal="on_press" from="Button2" to="." method="_on_settings_button_press"]
