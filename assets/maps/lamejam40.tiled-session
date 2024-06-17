@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "test_map.tmx",
+    "activeFile": "test_ice_map.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -13,19 +13,19 @@
             "scaleInEditor": 5.5
         },
         "test_ice_map.tmx": {
-            "scale": 2.35421875,
+            "scale": 2,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 160.35043472489548,
-                "y": 120.42211455498773
+                "x": 154.75,
+                "y": 123.25
             }
         },
         "test_map.tmx": {
             "scale": 1.5,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 160.33333333333334,
-                "y": 119.66666666666666
+                "x": 181.66666666666669,
+                "y": 45.66666666666666
             }
         },
         "tilemap_ice.tsx": {
@@ -45,9 +45,9 @@
     ],
     "project": "lamejam40.tiled-project",
     "recentFiles": [
-        "test_ice_map.tmx",
+        "test_map.tmx",
         "basic_tilemap.tsx",
-        "test_map.tmx"
+        "test_ice_map.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

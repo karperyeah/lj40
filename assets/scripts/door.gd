@@ -1,5 +1,7 @@
 extends Area2D
 
+signal door_activated
+
 func _ready():
 	$AnimationPlayer.play("Idle")
 

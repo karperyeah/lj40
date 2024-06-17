@@ -155,7 +155,7 @@ tracks/3/keys = {
 "values": [ true ]
 }
 
-[node name="Door" type="Area2D"]
+[node name="Door" type="Area2D" groups=["Door", "Interactable"]]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
