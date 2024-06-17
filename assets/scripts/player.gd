@@ -19,6 +19,7 @@ export var allow_control : bool = true
 var direction = 0.0
 var velocity = Vector2()
 
+export var scene : String
 
 func _gravity(delta: float) -> void:
 	if not is_on_floor():
@@ -53,7 +54,11 @@ func _set_control_toggle(value : bool) -> void:
 
 func _kill() -> void:
 	# ADD THE OTHER STUFF, ANIMATION, ETC
-	self.visible = false
+	$AnimationPlayer.play("Death")
+	
+func _restart() -> void:
+	SceneTransition.change_scene(scene)
+	print("Restart!")
 
 func _animation(direction: float) -> void:
 	if direction:
@@ -89,3 +94,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_HurtBox_body_entered(body):
 	print("Agghhh! Hurts!!! Hurtie!")
+	$DeathSound.pitch_scale = rand_range(0.8, 1.2)
+	$DeathSound.play()
+	$Meat.play()
+	_kill()
